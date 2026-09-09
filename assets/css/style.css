@@ -34,6 +34,10 @@
 
 * { box-sizing: border-box; }
 
+/* Toute regle `display` l'emporte sur l'attribut `hidden` : sans ceci, la console
+   et le bouton flottant resteraient visibles, y compris quand le script ne tourne pas. */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 
 body {
@@ -84,10 +88,11 @@ strong { color: #fff; font-weight: 600; }
 }
 
 .nav-brand {
-  font-weight: 700; font-size: 0.98rem; text-decoration: none;
-  letter-spacing: -0.01em; white-space: nowrap;
+  font-family: var(--font-mono);
+  font-weight: 700; font-size: 0.9rem; text-decoration: none;
+  letter-spacing: -0.03em; white-space: nowrap;
 }
-.nav-brand span { color: var(--muted); font-weight: 500; }
+.nav-brand span { color: var(--muted); font-weight: 400; }
 
 .nav-links { display: flex; gap: 1.6rem; margin-left: auto; }
 .nav-links a {
@@ -165,8 +170,9 @@ strong { color: #fff; font-weight: 600; }
 }
 
 .hero-name {
-  font-size: clamp(2.6rem, 7vw, 4.4rem);
-  font-weight: 800; letter-spacing: -0.035em;
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 5.6vw, 3.7rem);
+  font-weight: 700; letter-spacing: -0.05em;
   margin-bottom: 1.4rem;
 }
 
@@ -534,8 +540,127 @@ a.link-chip:hover {
   text-underline-offset: 3px;
 }
 
-/* Apparition au défilement */
+/* Bouton flottant et console */
 
+.run-btn {
+  position: fixed; left: 1.5rem; bottom: 1.5rem; z-index: 60;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500;
+  color: var(--accent); cursor: pointer;
+  background: rgba(10, 14, 19, 0.94);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  border-radius: 999px; padding: 0.6rem 1.1rem 0.6rem 0.85rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  animation: run-pulse 3.2s ease-in-out infinite;
+}
+.run-btn svg { width: 17px; height: 17px; fill: var(--accent); }
+.run-btn:hover {
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.12);
+  transform: translateY(-2px);
+  animation: none;
+}
+@keyframes run-pulse {
+  0%, 100% { box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 0 0 rgba(var(--accent-rgb), 0.3); }
+  50%      { box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 0 9px rgba(var(--accent-rgb), 0); }
+}
+
+.console {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center; padding: 1.25rem;
+}
+.console-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(2, 5, 9, 0.8); backdrop-filter: blur(5px);
+}
+.console-window {
+  position: relative;
+  width: min(920px, 100%); max-height: min(82vh, 720px);
+  display: flex; flex-direction: column;
+  background: #06090e;
+  border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+  animation: console-in 0.25s ease-out;
+}
+@keyframes console-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+}
+
+.console-bar {
+  display: flex; align-items: center; gap: 0.85rem;
+  padding: 0.65rem 0.9rem;
+  background: rgba(255, 255, 255, 0.035);
+  border-bottom: 1px solid var(--border-soft);
+}
+.console-dots { display: flex; gap: 0.42rem; flex-shrink: 0; }
+.console-dots i { width: 11px; height: 11px; border-radius: 50%; }
+.console-dots i:nth-child(1) { background: #ff5f57; }
+.console-dots i:nth-child(2) { background: #febc2e; }
+.console-dots i:nth-child(3) { background: #28c840; }
+.console-title {
+  font-family: var(--font-mono); font-size: 0.75rem;
+  color: var(--dim); overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap;
+}
+.console-close {
+  margin-left: auto; flex-shrink: 0;
+  background: none; border: none; cursor: pointer;
+  color: var(--dim); font-size: 1.3rem; line-height: 1;
+  padding: 0 0.25rem; transition: color 0.2s;
+}
+.console-close:hover { color: var(--text); }
+
+.console-body {
+  flex: 1; overflow: auto;
+  padding: 1.1rem 1.15rem 1.4rem;
+  font-family: var(--font-mono); font-size: 0.76rem;
+  line-height: 1.7; color: var(--muted);
+  cursor: pointer;
+}
+.console-body > * { animation: line-in 0.16s ease-out; }
+@keyframes line-in { from { opacity: 0; } }
+
+.c-blank { height: 0.85em; }
+.c-cmd { color: var(--accent); }
+.c-rule { color: #2c3a46; white-space: nowrap; overflow: hidden; }
+.c-suite { color: var(--text); font-weight: 500; }
+.c-test { display: flex; align-items: baseline; gap: 1.2rem; }
+.c-test span:first-child {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.c-doc { color: var(--dim); }
+.c-pass { color: #3ddc84; margin-left: auto; flex-shrink: 0; }
+.c-total { color: var(--text); }
+/* Robot Framework aligne ses chemins a l'espace pres : sans ceci le HTML les ecraserait. */
+.c-path { color: var(--dim); white-space: pre; }
+.c-exit { color: #3ddc84; }
+
+.c-caret::after {
+  content: '\258b'; color: var(--accent);
+  animation: caret 1.05s step-end infinite; margin-left: 0.15em;
+}
+@keyframes caret { 50% { opacity: 0; } }
+
+.console-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 0.6rem 1rem;
+  border-top: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.025);
+  font-family: var(--font-mono); font-size: 0.7rem; color: var(--dim);
+}
+.console-replay {
+  font-family: inherit; font-size: inherit;
+  color: var(--accent); background: none;
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  border-radius: 6px; padding: 0.25rem 0.7rem; cursor: pointer;
+  transition: background 0.2s;
+}
+.console-replay:hover { background: rgba(var(--accent-rgb), 0.12); }
+
+/* Apparition au défilement */
 .reveal {
   opacity: 0; transform: translateY(18px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -573,4 +698,8 @@ a.link-chip:hover {
   .job { padding-left: 1.8rem; }
   .pull-quote { padding: 1.3rem 1.2rem; }
   .cert-head { flex-direction: column; gap: 0.1rem; }
+  .run-btn { left: 1rem; bottom: 1rem; }
+  .console { padding: 0.75rem; }
+  .console-body { font-size: 0.66rem; padding: 0.9rem; }
+  .c-test { gap: 0.6rem; }
 }
