@@ -38,7 +38,6 @@
     <ul class="nav-links">
       <li><a href="#approche">Approche</a></li>
       <li><a href="#realisations">Réalisations</a></li>
-      <li><a href="#code">Code public</a></li>
       <li><a href="#competences">Compétences</a></li>
       <li><a href="#experience">Parcours</a></li>
       <li><a href="#formation">Formation</a></li>
@@ -194,6 +193,33 @@
           <strong>Autour :</strong> configuration centralisée, chiffrement des credentials,
           reporting Allure&nbsp;/&nbsp;ELK, intégration CI&nbsp;/&nbsp;CD, provisioning des données de test par API.
         </p>
+
+        <div class="feature-public">
+          <h4>Une version publique, pour en juger sur pièces</h4>
+          <p>
+            <strong>TestOps</strong> reprend les mêmes partis pris sur des applications de
+            démonstration : aucune URL dans les tests, aucun mot de passe versionné, un run
+            qui part d'un contexte explicite. Elle donne à voir l'architecture et les
+            décisions, pas l'étendue : la plateforme en service couvre en plus le mobile natif
+            via Appium, évolue en continu avec le produit testé, et reste privée.
+          </p>
+
+          <div class="project-links">
+            <a class="project-link project-link-main" href="https://julien-becheny.github.io/robot-testops/" target="_blank" rel="noopener" data-print-label="julien-becheny.github.io/robot-testops">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              Voir la démo
+            </a>
+            <a class="project-link" href="https://github.com/julien-becheny/robot-testops" target="_blank" rel="noopener" data-print-label="github.com/julien-becheny/robot-testops">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+              Lire le code
+            </a>
+          </div>
+
+          <p class="feature-note">
+            La démo rejoue une exécution enregistrée : logs, étapes, verdict et rapport sont
+            réels, mais rien n'est exécuté dans le navigateur.
+          </p>
+        </div>
       </div>
     </article>
 
@@ -265,72 +291,10 @@
   </div>
 </section>
 
-<!-- Code public -->
-<section class="section" id="code">
-  <div class="wrap">
-    <p class="section-kicker">03 · Code public</p>
-    <h2 class="section-title">Ce que vous pouvez vérifier vous-même</h2>
-
-    <article class="feature feature-oss">
-      <div class="feature-head">
-        <span class="feature-tag">Projet personnel</span>
-        <h3>TestOps</h3>
-        <p class="feature-sub">Interface web de pilotage de tests Robot Framework</p>
-      </div>
-
-      <div class="feature-body">
-        <p class="feature-thesis">
-          Robot Framework s'exécute très bien en ligne de commande. Ce qui manque en équipe,
-          c'est tout ce qu'il y a autour : savoir <strong>sur quel environnement</strong> part
-          un run, <strong>ce qu'il va jouer</strong>, ce qui se passe <strong>pendant</strong>,
-          et où est le rapport <strong>après</strong>.
-        </p>
-
-        <ul class="ai-list">
-          <li>
-            <h4>Aucune URL dans les tests</h4>
-            <p>Un test déclare le module qu'il traverse ; l'URL est composée à l'exécution. Changer d'environnement ne touche pas une ligne de test.</p>
-          </li>
-          <li>
-            <h4>Aucun mot de passe versionné</h4>
-            <p>Les comptes désignent une référence ; la valeur vit hors du dépôt.</p>
-          </li>
-          <li>
-            <h4>Un run part d'un contexte explicite</h4>
-            <p>Navigateur, appareil émulé et environnement sont figés au lancement, et une cible marquée production demande confirmation.</p>
-          </li>
-        </ul>
-
-        <ul class="chips chips-tech">
-          <li>Flask</li><li>Socket.IO</li><li>React</li><li>Robot Framework</li><li>Browser library</li><li>Playwright</li>
-        </ul>
-
-        <div class="project-links">
-          <a class="project-link project-link-main" href="https://julien-becheny.github.io/robot-testops/" target="_blank" rel="noopener" data-print-label="julien-becheny.github.io/robot-testops">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            Voir la démo
-          </a>
-          <a class="project-link" href="https://github.com/julien-becheny/robot-testops" target="_blank" rel="noopener" data-print-label="github.com/julien-becheny/robot-testops">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-            Lire le code
-          </a>
-        </div>
-
-        <p class="feature-note">
-          La démo rejoue une exécution enregistrée : logs, étapes, verdict et rapport sont
-          réels, mais rien n'est exécuté dans le navigateur. Les suites livrées visent des
-          applications de démonstration publiques, pour que le dépôt tourne sans compte ni
-          configuration.
-        </p>
-      </div>
-    </article>
-  </div>
-</section>
-
 <!-- Compétences -->
-<section class="section section-alt" id="competences">
+<section class="section" id="competences">
   <div class="wrap">
-    <p class="section-kicker">04 · Compétences</p>
+    <p class="section-kicker">03 · Compétences</p>
     <h2 class="section-title">Stack technique</h2>
 
     <div class="grid-skills">
@@ -375,9 +339,9 @@
 </section>
 
 <!-- Parcours -->
-<section class="section" id="experience">
+<section class="section section-alt" id="experience">
   <div class="wrap">
-    <p class="section-kicker">05 · Parcours</p>
+    <p class="section-kicker">04 · Parcours</p>
     <h2 class="section-title">Expérience professionnelle</h2>
 
     <ol class="timeline">
@@ -483,9 +447,9 @@
 </section>
 
 <!-- Formation -->
-<section class="section section-alt" id="formation">
+<section class="section" id="formation">
   <div class="wrap">
-    <p class="section-kicker">06 · Formation</p>
+    <p class="section-kicker">05 · Formation</p>
     <h2 class="section-title">Diplômes et certifications</h2>
 
     <div class="grid-2">

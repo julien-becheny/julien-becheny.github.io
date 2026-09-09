@@ -22,8 +22,8 @@
 body {
   background: #fff !important;
   color: var(--print-text) !important;
-  font-size: 9.2pt;
-  line-height: 1.32;
+  font-size: 9.4pt;
+  line-height: 1.35;
 }
 
 /* À l'écran le gras est blanc : sur papier il disparaîtrait purement et simplement. */
@@ -51,9 +51,8 @@ strong { color: var(--print-text) !important; }
 
 /* Le site déroule le discours ; le CV papier doit tenir en trois pages.
    Les principes de travail et le rappel des 24 h vivent en ligne : ce
-   dernier est déjà dans les chiffres du hero et dans le poste VEGA.
-   La note sur la démo est portée par le site lui-même, que le lecteur ouvrira. */
-.grid-4, .feature-result, .feature-note { display: none !important; }
+   dernier est déjà dans les chiffres du hero et dans le poste VEGA. */
+.grid-4, .feature-result { display: none !important; }
 
 /* Le repère visuel de défilement n'a pas de sens sur papier */
 .timeline::before, .job::before { display: none !important; }
@@ -123,7 +122,7 @@ strong { color: var(--print-text) !important; }
 
 /* Sections */
 
-.section { padding: 2mm 0 !important; border: none !important; }
+.section { padding: 2.5mm 0 !important; border: none !important; }
 .section-kicker {
   color: var(--print-dim) !important;
   font-size: 7.5pt; margin-bottom: 0.5mm;
@@ -196,6 +195,12 @@ strong { color: var(--print-text) !important; }
 .ai-list p { font-size: 8.2pt; color: var(--print-muted) !important; max-width: none; line-height: 1.3; }
 
 /* Un bouton ne se clique pas sur papier : on imprime l'adresse. */
+.feature-public {
+  margin-top: 3mm; padding-top: 2.5mm;
+  border-top: 0.5pt dashed var(--print-border);
+}
+.feature-public h4 { font-size: 9.5pt; color: var(--print-accent) !important; margin-bottom: 1mm; }
+.feature-public > p { color: var(--print-muted) !important; font-size: 8.8pt; max-width: none; }
 .project-links { gap: 5mm; margin-top: 2.5mm; }
 .project-link {
   border: none !important; background: none !important;

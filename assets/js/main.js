@@ -66,10 +66,34 @@
     '.stat, .principle, .feature, .skill-group, .job, .cert-list li, .pull-quote'
   );
 
+  /* Le chiffre grimpe depuis zero quand la carte entre dans l'ecran. La valeur finale
+     est deja dans le HTML : sans script, elle s'affiche telle quelle. */
+  function compteur(el) {
+    var parts = el.textContent.match(/^(\D*)(\d+)(.*)$/);
+    if (!parts) return;
+    var avant = parts[1], cible = parseInt(parts[2], 10), apres = parts[3];
+    var debut = null, duree = 1100;
+
+    function pas(horodatage) {
+      // Onglet masque : requestAnimationFrame se suspend et figerait le chiffre en route.
+      if (document.hidden) { el.textContent = avant + cible + apres; return; }
+      if (debut === null) debut = horodatage;
+      var avancement = Math.min((horodatage - debut) / duree, 1);
+      var adouci = 1 - Math.pow(1 - avancement, 3);
+      el.textContent = avant + Math.round(cible * adouci) + apres;
+      if (avancement < 1) requestAnimationFrame(pas);
+    }
+    requestAnimationFrame(pas);
+  }
+
   var reveal = new IntersectionObserver(function (entries, observer) {
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('is-visible');
+      if (entry.target.classList.contains('stat')) {
+        var valeur = entry.target.querySelector('.stat-value');
+        if (valeur) compteur(valeur);
+      }
       observer.unobserve(entry.target);
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
