@@ -98,26 +98,27 @@
   var THIN = new Array(79).join('-');
 
   var script = [
-    { cls: 'c-cmd', text: '> robot --include profil julien_becheny.robot', pause: 320 },
+    { cls: 'c-cmd', text: '> robot --include profil julien_becheny.robot', pause: 520 },
     { cls: 'c-blank' },
     { cls: 'c-rule', text: RULE },
-    { cls: 'c-suite', text: 'Julien Becheny :: Ingenieur QA Automation / SDET' },
-    { cls: 'c-rule', text: RULE, pause: 200 },
-    { test: 'Couverture Multi Plateformes :: 5 OS cibles' },
+    { cls: 'c-suite', text: 'Julien Becheny :: Ingénieur QA Automation / SDET' },
+    { cls: 'c-rule', text: RULE, pause: 380 },
+    { test: 'Couverture Multi Plateformes :: Android, iOS, iPadOS, Windows, Web' },
     { test: 'Framework Robot Framework / Appium :: 380+ tests maintenables' },
-    { test: 'Non Regression Complete :: 24 h contre 1 semaine' },
-    { test: 'Plateforme D Orchestration :: React, Flask, Robot Framework' },
-    { test: 'Generation De Tests Par IA :: agents, index, garde-fous' },
-    { test: 'Banc De Test Multi OS :: 4 PC, 2 Mac, Android, iPhone, iPad' },
-    { test: 'Diagnostic Et Performance :: temps d affichage, fuites memoire' },
-    { test: 'Disponibilite :: CDI, Montpellier' },
+    { test: 'Non Régression Complète :: 24 h contre 1 semaine' },
+    { test: "Plateforme D'Orchestration :: React, Flask, Robot Framework" },
+    { test: 'Chaîne IA Du Ticket Au Test :: agents, index, garde-fous, MCP' },
+    { test: 'Banc De Test Multi OS :: 4 PC Windows, 2 Mac, Android, iPhone, iPad' },
+    { test: "Diagnostic Et Performance :: temps d'affichage, fuites mémoire" },
+    { test: 'Disponibilité :: CDI, Montpellier, remote' },
     { cls: 'c-total', text: 'Julien Becheny', status: 'PASS' },
     { cls: 'c-total', text: '8 tests, 8 passed, 0 failed' },
-    { cls: 'c-rule', text: RULE, pause: 180 },
+    { cls: 'c-rule', text: RULE, pause: 320 },
     { cls: 'c-path', text: 'Output:  /profil/output.xml' },
     { cls: 'c-path', text: 'Log:     /profil/log.html' },
     { cls: 'c-path', text: 'Report:  /profil/report.html' },
     { cls: 'c-blank' },
+    { cls: 'c-verdict', text: 'VERDICT: BUILD STABLE, PRÊT POUR LA MISE EN PRODUCTION', pause: 620 },
     { cls: 'c-exit', text: 'Process finished with exit code 0', caret: true }
   ];
 
@@ -185,7 +186,7 @@
 
     var delay = 0;
     steps.forEach(function (step, i) {
-      delay += step.pause || (step.cls === 'c-rule' ? 24 : 74);
+      delay += step.pause || (step.cls === 'c-rule' ? 55 : 145);
       timers.push(setTimeout(function () {
         body.appendChild(makeLine(step));
         body.scrollTop = body.scrollHeight;
