@@ -98,11 +98,11 @@
   var THIN = new Array(79).join('-');
 
   var script = [
-    { cls: 'c-cmd', text: '> robot --include profil julien_becheny.robot', pause: 520 },
+    { cls: 'c-cmd', text: '> robot --include profil julien_becheny.robot', pause: 750 },
     { cls: 'c-blank' },
     { cls: 'c-rule', text: RULE },
     { cls: 'c-suite', text: 'Julien Becheny :: Ingénieur QA Automation / SDET' },
-    { cls: 'c-rule', text: RULE, pause: 380 },
+    { cls: 'c-rule', text: RULE, pause: 550 },
     { test: 'Couverture Multi Plateformes :: Android, iOS, iPadOS, Windows, Web' },
     { test: 'Framework Robot Framework / Appium :: 380+ tests maintenables' },
     { test: 'Non Régression Complète :: 24 h contre 1 semaine' },
@@ -113,12 +113,12 @@
     { test: 'Disponibilité :: CDI, Montpellier, remote' },
     { cls: 'c-total', text: 'Julien Becheny', status: 'PASS' },
     { cls: 'c-total', text: '8 tests, 8 passed, 0 failed' },
-    { cls: 'c-rule', text: RULE, pause: 320 },
+    { cls: 'c-rule', text: RULE, pause: 480 },
     { cls: 'c-path', text: 'Output:  /profil/output.xml' },
     { cls: 'c-path', text: 'Log:     /profil/log.html' },
     { cls: 'c-path', text: 'Report:  /profil/report.html' },
     { cls: 'c-blank' },
-    { cls: 'c-verdict', text: 'VERDICT: BUILD STABLE, PRÊT POUR LA MISE EN PRODUCTION', pause: 620 },
+    { cls: 'c-verdict', text: 'VERDICT: BUILD STABLE, PRÊT POUR LA MISE EN PRODUCTION', pause: 900 },
     { cls: 'c-exit', text: 'Process finished with exit code 0', caret: true }
   ];
 
@@ -186,7 +186,7 @@
 
     var delay = 0;
     steps.forEach(function (step, i) {
-      delay += step.pause || (step.cls === 'c-rule' ? 55 : 145);
+      delay += step.pause || (step.cls === 'c-rule' ? 90 : 225);
       timers.push(setTimeout(function () {
         body.appendChild(makeLine(step));
         body.scrollTop = body.scrollHeight;

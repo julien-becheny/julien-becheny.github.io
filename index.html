@@ -489,9 +489,14 @@
   <div class="console-backdrop" data-run-close></div>
   <div class="console-window" role="dialog" aria-modal="true" aria-labelledby="console-title">
     <header class="console-bar">
-      <span class="console-dots" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="console-title" id="console-title">robot --include profil julien_becheny.robot</span>
-      <button class="console-close" type="button" data-run-close aria-label="Fermer la console">&#215;</button>
+      <span class="console-btns">
+        <i class="win-btn win-min" aria-hidden="true"></i>
+        <i class="win-btn win-max" aria-hidden="true"></i>
+        <button class="win-btn console-close" type="button" data-run-close aria-label="Fermer la console">
+          <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 10 10M10 0 0 10"/></svg>
+        </button>
+      </span>
     </header>
     <div class="console-body" data-console-body aria-live="polite"></div>
     <footer class="console-foot">
