@@ -556,7 +556,9 @@ a.link-chip:hover {
   backdrop-filter: blur(10px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
   transition: border-color 0.2s, background 0.2s, transform 0.15s;
-  animation: run-pulse 3.2s ease-in-out infinite;
+  /* Trois battements, pas davantage : une animation sans fin distrait le lecteur et
+     empeche les outils d'automatisation de considerer le bouton comme stable. */
+  animation: run-pulse 3.2s ease-in-out 3;
 }
 .run-btn svg { width: 17px; height: 17px; fill: var(--accent); }
 .run-btn:hover {
