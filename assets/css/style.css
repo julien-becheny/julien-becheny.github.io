@@ -68,6 +68,14 @@ strong { color: #fff; font-weight: 600; }
 }
 .skip-link:focus { left: 0; top: 0; }
 
+/* Reserve aux lecteurs d'ecran : porte la phrase stable, quand l'animation
+   en presente une autre. */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
 /* Navigation */
@@ -187,6 +195,18 @@ strong { color: #fff; font-weight: 600; }
   color: var(--accent);
   margin-bottom: 1.6rem;
 }
+
+/* La hauteur est fixee par le script, sur la plus longue des phrases :
+   sans cela, chaque changement ferait remonter tout le contenu du hero. */
+.typing { display: block; }
+.typing::after {
+  content: ''; display: inline-block;
+  width: 2px; height: 0.95em;
+  background: currentColor;
+  margin-left: 0.12em; vertical-align: text-bottom;
+  animation: caret-blink 1.05s step-end infinite;
+}
+@keyframes caret-blink { 50% { opacity: 0; } }
 
 .hero-lede {
   font-size: 1.05rem; color: var(--muted);

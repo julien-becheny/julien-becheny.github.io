@@ -125,7 +125,7 @@
     { cls: 'c-cmd', text: '> robot --include profil julien_becheny.robot', pause: 750 },
     { cls: 'c-blank' },
     { cls: 'c-rule', text: RULE },
-    { cls: 'c-suite', text: 'Julien Becheny :: Ingénieur QA Automation / SDET' },
+    { cls: 'c-suite', text: 'Julien Becheny :: Ingénieur QA Automation' },
     { cls: 'c-rule', text: RULE, pause: 550 },
     { test: 'Couverture Multi Plateformes :: Android, iOS, iPadOS, Windows, Web' },
     { test: 'Framework Robot Framework / Appium :: 380+ tests maintenables' },
@@ -246,4 +246,70 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !modal.hidden) close();
   });
+})();
+
+/* Machine a ecrire sous le nom. La premiere phrase est celle du HTML : elle reste
+   affichee sans script, et un lecteur d'ecran lit la version stable a cote. */
+(function () {
+  'use strict';
+
+  var cible = document.querySelector('.typing');
+  if (!cible || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var phrases = [cible.textContent.trim()].concat(
+    cible.getAttribute('data-phrases').split('|')
+  );
+
+  var FRAPPE = 45, EFFACE = 25, LECTURE = 2400, RESPIRATION = 420;
+  var index = 0, position = 0, efface = false, minuteur = null;
+
+  /* Fige la hauteur sur la plus longue phrase, sinon le hero remonte a chaque cycle. */
+  function reserverHauteur() {
+    var memoire = cible.textContent;
+    var haut = 0;
+    cible.style.minHeight = '';
+    phrases.forEach(function (p) {
+      cible.textContent = p;
+      haut = Math.max(haut, cible.offsetHeight);
+    });
+    cible.style.minHeight = haut + 'px';
+    cible.textContent = memoire;
+  }
+
+  function cycle() {
+    /* Onglet masque : les minuteurs sont brides et la phrase resterait tronquee
+       jusqu'au retour du visiteur. On la laisse entiere et on repasse plus tard. */
+    if (document.hidden) {
+      cible.textContent = phrases[index];
+      position = phrases[index].length;
+      efface = true;
+      minuteur = setTimeout(cycle, LECTURE);
+      return;
+    }
+
+    var phrase = phrases[index];
+
+    if (!efface && position === phrase.length) {
+      efface = true;
+      minuteur = setTimeout(cycle, LECTURE);
+      return;
+    }
+    if (efface && position === 0) {
+      efface = false;
+      index = (index + 1) % phrases.length;
+      minuteur = setTimeout(cycle, RESPIRATION);
+      return;
+    }
+
+    position += efface ? -1 : 1;
+    cible.textContent = phrase.slice(0, position);
+    minuteur = setTimeout(cycle, efface ? EFFACE : FRAPPE);
+  }
+
+  reserverHauteur();
+  window.addEventListener('resize', reserverHauteur);
+
+  position = phrases[0].length;
+  efface = true;
+  minuteur = setTimeout(cycle, LECTURE);
 })();
