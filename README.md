@@ -1,69 +1,63 @@
-# CV de Julien Becheny
+# Mon CV, en une page et sans dépendance
 
-Site personnel statique, à publier sur GitHub Pages. Aucune dépendance, aucune
-étape de build : le contenu vit dans le HTML, le JavaScript n'ajoute que du confort.
+**[julien-becheny.github.io](https://julien-becheny.github.io)**
+
+Ingénieur QA Automation, je conçois des frameworks de test multi-plateformes et
+l'outillage qui va avec. Ce dépôt héberge mon CV en ligne : une page HTML, deux
+feuilles de style, un script. Pas de framework, pas d'étape de build, pas de
+`node_modules`.
+
+## Pourquoi c'est fait comme ça
+
+Un CV est lu par des gens pressés, parfois depuis un téléphone, parfois imprimé pour
+être annoté en entretien. Les choix techniques découlent de là.
+
+**Le contenu vit dans le HTML.** Pas de rendu côté client, pas de fichier de données
+séparé. Si le JavaScript ne se charge pas, la page reste entière et lisible. Sur un CV,
+une page blanche est éliminatoire, et l'indexation par les moteurs de recherche compte.
+
+**Le script n'ajoute que du confort** : bouton d'impression, section courante dans la
+navigation, apparitions au défilement. Rien d'essentiel n'en dépend. Le bouton flottant
+est révélé par le script lui-même, pour qu'il n'existe pas s'il ne peut rien déclencher.
+
+**Une feuille d'impression dédiée.** Le bouton « Enregistrer en PDF » ne télécharge pas
+un fichier figé : il bascule la page en document A4. Le thème sombre passe en noir sur
+blanc, la navigation disparaît, les blocs ne se coupent plus entre deux pages, et le
+site de sept écrans tient en trois pages. Le PDF ne peut donc jamais être en retard sur
+le site.
+
+**L'adresse e-mail est assemblée à l'exécution.** Le motif complet n'apparaît nulle part
+dans le HTML servi : les aspirateurs d'adresses repartent les mains vides, un lecteur
+humain voit un lien normal.
+
+**Accessibilité et sobriété.** Lien d'évitement, structure de titres cohérente, focus
+visible, fermeture au clavier, `prefers-reduced-motion` respecté. Une seule requête
+externe, pour les polices.
+
+## Un détail pour les gens du métier
+
+Le bouton en bas à gauche rejoue mon profil sous la forme d'une sortie Robot Framework :
+séparateurs, `| PASS |` alignés à droite, résumé de suite et chemins de rapports. C'est
+l'outil avec lequel je travaille tous les jours.
+
+## Structure
 
 ```
-index.html            tout le contenu du CV
+index.html            tout le contenu
 assets/css/style.css  affichage écran
-assets/css/print.css  bascule en CV papier A4 (bouton « Enregistrer en PDF »)
-assets/js/main.js     bouton PDF, section courante, apparitions
+assets/css/print.css  bascule en document A4
+assets/js/main.js     impression, navigation, console
+assets/img/           portrait et vignette de partage
 ```
 
-## Voir le site en local
+## En local
 
-Ouvrir `index.html` dans un navigateur suffit. Pour un rendu identique à la
-production (chemins absolus, polices) :
+Ouvrir `index.html` suffit. Pour un rendu identique à la production :
 
-```powershell
+```bash
 python -m http.server 8080
-# puis http://localhost:8080
 ```
 
-## Modifier le contenu
+## Réemploi
 
-Tout est dans `index.html`, dans l'ordre des sections visibles. Les repères :
-
-| Section | Ancre |
-|---|---|
-| Chiffres clés du hero | `class="stats"` |
-| Principes de travail | `id="approche"` |
-| Projets phares | `id="realisations"` |
-| Stack technique | `id="competences"` |
-| Expériences | `id="experience"` |
-| Diplômes et certifications | `id="formation"` |
-
-Ajouter une expérience = dupliquer un bloc `<li class="job">` dans la timeline.
-La classe `job-current` marque le poste en cours (point coloré + badge).
-
-## Générer le PDF
-
-Bouton « Enregistrer en PDF » → boîte d'impression du navigateur → **Enregistrer
-au format PDF**. Dans Chrome, décocher « En-têtes et pieds de page » pour retirer
-la date et l'URL ajoutées automatiquement.
-
-La feuille `print.css` bascule le thème sombre en noir sur blanc, masque la
-navigation et empêche les blocs d'être coupés en deux entre deux pages.
-
-## Publier sur GitHub Pages
-
-1. Créer un dépôt **public** nommé exactement **`julien-becheny.github.io`**. Ce nom donne
-   l'URL courte `https://julien-becheny.github.io/` ; avec tout autre nom, l'URL
-   contiendrait le nom du dépôt. Le dépôt doit être public : GitHub Pages ne publie pas
-   depuis un dépôt privé sur un compte gratuit.
-2. Pousser le contenu de ce dossier sur la branche `main`.
-3. Dépôt → *Settings* → *Pages* → Source : `Deploy from a branch`, branche `main`,
-   dossier `/ (root)`.
-
-La mise en ligne prend une minute environ. Chaque `git push` republie le site.
-
-## Reste à décider
-
-- **Portrait** : le fichier attendu est `assets/img/julien-becheny.jpg`. S'il est absent,
-  le script masque le cadre plutôt que d'afficher une image cassée.
-- **Adresse e-mail** : assemblée en JavaScript au chargement. Le motif complet n'apparaît
-  pas dans le HTML servi, ce qui la met hors de portée des aspirateurs d'adresses.
-- **Image de partage** : sans `og:image`, un lien collé dans LinkedIn ou Slack s'affiche
-  sans vignette. Une image 1200x630 dans `assets/img/` corrigerait ça.
-- **Polices** : Inter et JetBrains Mono sont chargées depuis Google Fonts. Les héberger
-  dans `assets/fonts/` supprimerait cet appel à un tiers.
+Le code est libre de réemploi. Le contenu (texte, parcours, portrait) ne l'est pas.
