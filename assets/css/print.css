@@ -1,0 +1,267 @@
+/*
+   Feuille d'impression : bascule en CV papier A4.
+   Le site est sombre ; imprimé tel quel il viderait une cartouche.
+   Ici, fond blanc, texte noir, un seul accent coloré.
+*/
+
+@page {
+  size: A4;
+  margin: 14mm 15mm;
+}
+
+:root {
+  --print-accent: #a3197f;
+  --print-text:   #111827;
+  --print-muted:  #4b5563;
+  --print-dim:    #6b7280;
+  --print-border: #d1d5db;
+}
+
+/* Réinitialisation du thème sombre */
+
+body {
+  background: #fff !important;
+  color: var(--print-text) !important;
+  font-size: 9.5pt;
+  line-height: 1.35;
+}
+
+/* À l'écran le gras est blanc : sur papier il disparaîtrait purement et simplement. */
+strong { color: var(--print-text) !important; }
+
+.hero, .section, .section-alt, .footer,
+.stat, .principle, .feature, .tiers li, .chips li, .pull-quote {
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+.hero::before, .hero::after,
+.feature::before, .stat::before { display: none !important; }
+
+/* Les dégradés sur texte n'existent pas à l'impression */
+.hero-thesis, .stat-value {
+  background: none !important;
+  -webkit-text-fill-color: var(--print-accent) !important;
+  color: var(--print-accent) !important;
+}
+
+/* Éléments à masquer */
+
+.nav, .skip-link, .no-print, .footer-pdf { display: none !important; }
+
+/* Le site déroule le discours ; le CV papier doit tenir en trois pages.
+   Les principes de travail et le rappel des 24 h vivent en ligne : ce
+   dernier est déjà dans les chiffres du hero et dans le poste VEGA. */
+.grid-4, .feature-result { display: none !important; }
+
+/* Le repère visuel de défilement n'a pas de sens sur papier */
+.timeline::before, .job::before { display: none !important; }
+
+/* Sans cela, imprimer sans avoir fait défiler la page produirait un PDF
+   amputé des sections que l'observateur n'a pas encore révélées. */
+.reveal { opacity: 1 !important; transform: none !important; }
+
+/* Mise en page compacte */
+
+.wrap { width: 100% !important; }
+
+.hero {
+  padding: 0 0 4mm !important;
+  border-bottom: 1.5pt solid var(--print-accent) !important;
+  margin-bottom: 4mm;
+}
+
+/* Le portrait n'a de sens qu'en haut de la première page, en petit format. */
+.hero-photo {
+  width: 26mm !important; padding: 0 !important;
+  background: none !important; box-shadow: none !important;
+  print-color-adjust: exact; -webkit-print-color-adjust: exact;
+}
+.hero-photo img {
+  border: 0.5pt solid var(--print-border) !important;
+  print-color-adjust: exact; -webkit-print-color-adjust: exact;
+}
+.hero-eyebrow {
+  color: var(--print-muted) !important;
+  font-size: 8pt; margin-bottom: 1mm;
+}
+.hero-name { font-size: 21pt; margin-bottom: 1.5mm; }
+.hero-thesis {
+  font-size: 11.5pt; max-width: none;
+  margin-bottom: 2mm;
+}
+.hero-lede {
+  font-size: 9pt; color: var(--print-muted) !important;
+  max-width: none; margin-bottom: 3mm;
+}
+
+.stats { gap: 3mm 10mm; margin-bottom: 3mm; }
+.stat {
+  border: none !important; padding: 0 !important;
+  flex: 0 0 auto !important; min-width: max-content;
+}
+.stat-value { font-size: 13pt; }
+.stat-label {
+  font-size: 7.5pt; color: var(--print-dim) !important;
+  letter-spacing: 0.04em;
+}
+
+.hero-links { gap: 3mm; }
+.link-chip {
+  border: none !important; padding: 0 !important;
+  font-size: 9pt; color: var(--print-muted) !important;
+}
+.link-chip svg { fill: var(--print-accent) !important; }
+
+/* Une adresse cliquable ne sert à rien sur papier : on l'écrit */
+.link-chip[data-print-label]::after {
+  content: ' ' attr(data-print-label);
+  color: var(--print-dim);
+  font-size: 8.5pt;
+}
+
+/* Sections */
+
+.section { padding: 3.5mm 0 !important; border: none !important; }
+.section-kicker {
+  color: var(--print-dim) !important;
+  font-size: 7.5pt; margin-bottom: 0.5mm;
+}
+.section-title {
+  font-size: 13pt; margin-bottom: 3mm;
+  max-width: none;
+  padding-bottom: 1.5mm;
+  border-bottom: 0.5pt solid var(--print-border);
+}
+
+.pull-quote {
+  border-left: 2pt solid var(--print-accent) !important;
+  border-image: none !important;
+  padding: 1mm 0 1mm 4mm !important;
+  margin-bottom: 0 !important;
+}
+.pull-quote p { font-size: 10pt; }
+.pull-quote footer { font-size: 8.5pt; color: var(--print-muted) !important; margin-top: 1.5mm; }
+
+.grid-4 { gap: 3mm; grid-template-columns: repeat(2, 1fr); }
+.principle {
+  border: 0.5pt solid var(--print-border) !important;
+  padding: 3mm !important;
+}
+.principle-num { color: var(--print-accent) !important; margin-bottom: 1.5mm; font-size: 7.5pt; }
+.principle h3 { font-size: 10pt; margin-bottom: 1mm; }
+.principle p { font-size: 8.5pt; color: var(--print-muted) !important; }
+
+/* Projets phares */
+
+.feature {
+  border: 0.5pt solid var(--print-border) !important;
+  border-radius: 3pt !important;
+  padding: 3mm !important;
+  margin-bottom: 3mm !important;
+}
+.feature-head { margin-bottom: 2mm; }
+.feature-tag {
+  border: none !important; background: none !important;
+  color: var(--print-accent) !important;
+  padding: 0 !important; margin-bottom: 1mm; font-size: 7.5pt;
+}
+.feature-head h3 { font-size: 11.5pt; }
+.feature-sub { font-size: 8.5pt; color: var(--print-muted) !important; }
+.feature-body > p { color: var(--print-muted) !important; max-width: none; font-size: 9pt; }
+.feature-thesis { color: var(--print-text) !important; }
+.feature-around {
+  border-top: 0.5pt solid var(--print-border) !important;
+  padding-top: 2mm; margin-top: 2mm !important; font-size: 8.5pt;
+}
+
+.tiers { gap: 2mm; margin-top: 2mm; }
+.tiers li {
+  border: 0.5pt solid var(--print-border) !important;
+  padding: 2mm !important;
+}
+.tier-num {
+  border: none !important; background: none !important;
+  color: var(--print-accent) !important;
+  padding: 0 !important; font-size: 7.5pt;
+}
+.tiers h4 { font-size: 8.5pt; }
+.tiers p { font-size: 7.5pt; color: var(--print-muted) !important; line-height: 1.3; }
+
+.ai-list { gap: 1.8mm; margin-top: 2mm; }
+.ai-list li { padding-left: 4mm; }
+.ai-list li::before { background: var(--print-accent) !important; }
+.ai-list h4 { font-size: 9pt; margin-bottom: 0.3mm; }
+.ai-list p { font-size: 8.2pt; color: var(--print-muted) !important; max-width: none; line-height: 1.3; }
+
+.chips li {
+  border: 0.5pt solid var(--print-border) !important;
+  color: var(--print-muted) !important;
+  font-size: 7.5pt; padding: 0.5mm 1.5mm;
+}
+
+/* Compétences */
+
+.grid-skills { gap: 2.5mm 4mm; grid-template-columns: repeat(3, 1fr); }
+.skill-group h3 {
+  color: var(--print-accent) !important;
+  border-bottom-color: var(--print-border) !important;
+  font-size: 8pt; margin-bottom: 1.5mm; padding-bottom: 0.8mm;
+}
+
+/* Parcours */
+
+.job { padding-left: 0 !important; padding-bottom: 3.5mm !important; }
+.job-meta { margin-bottom: 1mm; gap: 1mm 4mm; }
+.job-dates { color: var(--print-accent) !important; font-size: 8.5pt; }
+.job-place { color: var(--print-dim) !important; font-size: 8.5pt; }
+.badge-current {
+  border: 0.5pt solid var(--print-accent) !important;
+  background: none !important;
+  color: var(--print-accent) !important;
+  font-size: 7pt;
+}
+.job-content h3 { font-size: 11pt; }
+.job-company { color: var(--print-text) !important; font-size: 9pt; }
+.job-company span { color: var(--print-dim) !important; }
+.job-context { color: var(--print-dim) !important; font-size: 8.2pt; margin-top: 0.5mm; max-width: none; }
+.job-mission { color: var(--print-muted) !important; font-size: 8.8pt; max-width: none; margin-top: 1.5mm; }
+.job-points { margin-top: 1.8mm; gap: 1mm; }
+.job-points li {
+  color: var(--print-muted) !important;
+  font-size: 8.5pt; max-width: none; line-height: 1.32;
+}
+.job-points li::before { color: var(--print-accent) !important; }
+.dates-inline { color: var(--print-dim) !important; }
+
+/* Formation */
+
+.grid-2 { gap: 5mm; }
+.col-title {
+  color: var(--print-accent) !important;
+  border-bottom-color: var(--print-border) !important;
+  font-size: 8pt; margin-bottom: 2mm; padding-bottom: 0.8mm;
+}
+.cert-list { gap: 1.8mm; }
+.cert-head h4 { font-size: 9pt; }
+.cert-year { color: var(--print-dim) !important; font-size: 8pt; }
+.cert-list p { color: var(--print-muted) !important; font-size: 8.2pt; }
+
+/* Pied de page */
+
+.footer {
+  border-top: 0.5pt solid var(--print-border) !important;
+  padding: 3mm 0 0 !important;
+  margin-top: 4mm;
+}
+.footer-name { font-size: 8pt; color: var(--print-dim) !important; }
+.footer-links a { font-size: 8pt; color: var(--print-dim) !important; }
+
+/* Coupures de page */
+
+.section-title, h3, h4 { break-after: avoid; page-break-after: avoid; }
+.principle, .feature, .job, .tiers li, .cert-list li, .skill-group,
+.pull-quote, .ai-list li {
+  break-inside: avoid; page-break-inside: avoid;
+}
+#experience, #competences { break-before: auto; }
