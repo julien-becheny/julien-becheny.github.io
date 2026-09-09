@@ -391,6 +391,42 @@ a.link-chip:hover {
 
 .feature-result .feature-head { margin-bottom: 1rem; }
 
+/* Liens vers un projet public */
+
+.project-links {
+  display: flex; flex-wrap: wrap; gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+.project-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px; text-decoration: none;
+  font-size: 0.88rem; font-weight: 600;
+  border: 1px solid var(--border);
+  color: var(--text); background: var(--surface);
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+.project-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+.project-link:hover {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: rgba(var(--accent-rgb), 0.08);
+  transform: translateY(-1px);
+}
+.project-link-main {
+  color: #05201c; background: var(--accent);
+  border-color: var(--accent);
+}
+.project-link-main:hover {
+  background: var(--accent); filter: brightness(1.1);
+  border-color: var(--accent);
+}
+
+.feature-note {
+  margin-top: 1.2rem !important;
+  font-size: 0.85rem; color: var(--dim) !important;
+  max-width: 74ch;
+}
+
 /* Étiquettes techniques */
 
 .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
