@@ -1,27 +1,27 @@
 /*
    Julien Becheny, CV.
 
-   Deux couleurs sur un bleu nuit, complementaires donc tres contrastees :
-   . jaune : ce qui doit claquer. Chiffres, liseres, puces, bouton d'action.
-   . bleu  : la structure. Intitules de section, dates, briques techniques.
+   Deux teintes proches sur un fond quasi noir : turquoise et cyan.
+   . turquoise : ce qui compte. Chiffres, liseres, puces, intitules.
+   . cyan      : les briques techniques et les noms d'entreprise.
    Le corps de texte n'est jamais colore.
 */
 
 :root {
-  --chrome:      #070c14;
-  --bg:          #0d1621;
-  --bg-alt:      #131f2d;
-  --surface:     rgba(255, 255, 255, 0.04);
-  --surface-2:   rgba(255, 255, 255, 0.065);
-  --border:      rgba(255, 255, 255, 0.09);
-  --border-soft: rgba(255, 255, 255, 0.055);
+  --chrome:      #070a0f;
+  --bg:          #0a0e13;
+  --bg-alt:      #0e141b;
+  --surface:     rgba(255, 255, 255, 0.035);
+  --surface-2:   rgba(255, 255, 255, 0.055);
+  --border:      rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(255, 255, 255, 0.05);
 
-  --text:   #eaf1f8;
-  --muted:  #9db2c6;
-  --dim:    #6d8399;
+  --text:   #e8eef4;
+  --muted:  #8fa0b0;
+  --dim:    #61707e;
 
-  --accent:       #fbbf24;
-  --accent-rgb:   251, 191, 36;
+  --accent:       #2dd4bf;
+  --accent-rgb:   45, 212, 191;
   --accent-2:     #38bdf8;
   --accent-2-rgb: 56, 189, 248;
 
@@ -57,7 +57,7 @@ strong { color: #fff; font-weight: 600; }
 
 .skip-link {
   position: absolute; left: -9999px;
-  background: var(--accent); color: #241a02;
+  background: var(--accent); color: #06231f;
   padding: 0.75rem 1.25rem; border-radius: 0 0 8px 0;
   font-weight: 600; z-index: 100;
 }
@@ -69,7 +69,7 @@ strong { color: #fff; font-weight: 600; }
 
 .nav {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(7, 12, 20, 0.85);
+  background: rgba(10, 14, 19, 0.85);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color 0.25s, background 0.25s;
@@ -108,14 +108,14 @@ strong { color: #fff; font-weight: 600; }
 .nav-links a.is-active { color: var(--text); }
 
 .btn-pdf {
-  font-family: inherit; font-size: 0.82rem; font-weight: 700;
-  color: #241a02; cursor: pointer;
-  background: var(--accent);
-  border: 1px solid var(--accent);
+  font-family: inherit; font-size: 0.82rem; font-weight: 600;
+  color: var(--accent); cursor: pointer;
+  background: rgba(var(--accent-rgb), 0.08);
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
   padding: 0.5rem 1rem; border-radius: 8px;
-  white-space: nowrap; transition: filter 0.2s, transform 0.15s;
+  white-space: nowrap; transition: background 0.2s, transform 0.15s;
 }
-.btn-pdf:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.btn-pdf:hover { background: rgba(var(--accent-rgb), 0.16); transform: translateY(-1px); }
 
 /* Hero */
 
@@ -127,12 +127,12 @@ strong { color: #fff; font-weight: 600; }
 .hero::before {
   content: ''; position: absolute; inset: -40% 0 auto -10%;
   height: 620px; pointer-events: none;
-  background: radial-gradient(closest-side, rgba(var(--accent-2-rgb), 0.13), transparent 70%);
+  background: radial-gradient(closest-side, rgba(var(--accent-rgb), 0.13), transparent 70%);
 }
 .hero::after {
   content: ''; position: absolute; top: -22%; right: -12%;
   width: 620px; height: 620px; pointer-events: none;
-  background: radial-gradient(closest-side, rgba(var(--accent-rgb), 0.12), transparent 70%);
+  background: radial-gradient(closest-side, rgba(var(--accent-2-rgb), 0.10), transparent 70%);
 }
 .hero-inner {
   position: relative;
@@ -161,7 +161,7 @@ strong { color: #fff; font-weight: 600; }
 .hero-eyebrow {
   font-family: var(--font-mono); font-size: 0.78rem;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--accent-2); margin-bottom: 1.1rem;
+  color: var(--accent); margin-bottom: 1.1rem;
 }
 
 .hero-name {
@@ -174,7 +174,7 @@ strong { color: #fff; font-weight: 600; }
   font-size: clamp(1.3rem, 3vw, 1.95rem);
   font-weight: 600; line-height: 1.3;
   letter-spacing: -0.02em;
-  color: var(--accent-2);
+  color: var(--accent);
   margin-bottom: 1.6rem;
 }
 
@@ -207,7 +207,6 @@ strong { color: #fff; font-weight: 600; }
   font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
   color: var(--accent);
 }
-.stat-value em { font-style: normal; opacity: 0.6; padding: 0 0.15em; }
 .stat-label {
   display: block; margin-top: 0.35rem;
   font-size: 0.78rem; color: var(--muted);
@@ -246,7 +245,7 @@ a.link-chip:hover {
 .section-kicker {
   font-family: var(--font-mono); font-size: 0.75rem;
   letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--accent-2); margin-bottom: 0.7rem;
+  color: var(--accent); margin-bottom: 0.7rem;
 }
 .section-title {
   font-size: clamp(1.7rem, 4vw, 2.5rem);
@@ -405,7 +404,7 @@ a.link-chip:hover {
 .skill-group h3 {
   font-size: 0.78rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.12em;
-  color: var(--accent-2); margin-bottom: 0.85rem;
+  color: var(--accent); margin-bottom: 0.85rem;
   padding-bottom: 0.55rem;
   border-bottom: 1px solid var(--border);
 }
@@ -443,7 +442,7 @@ a.link-chip:hover {
 }
 .job-dates {
   font-family: var(--font-mono); font-size: 0.79rem;
-  color: var(--accent-2); letter-spacing: 0.01em;
+  color: var(--accent); letter-spacing: 0.01em;
 }
 .job-place { font-size: 0.79rem; color: var(--dim); }
 .badge-current {
@@ -459,7 +458,7 @@ a.link-chip:hover {
   font-size: clamp(1.1rem, 2.4vw, 1.35rem);
   font-weight: 700; margin-bottom: 0.2rem;
 }
-.job-company { font-size: 0.97rem; font-weight: 600; color: var(--text); }
+.job-company { font-size: 0.97rem; font-weight: 600; color: var(--accent-2); }
 .job-company span { color: var(--dim); font-weight: 400; font-size: 0.86rem; }
 .job-context {
   margin-top: 0.5rem; font-size: 0.9rem;
@@ -495,7 +494,7 @@ a.link-chip:hover {
 .col-title {
   font-size: 0.78rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.12em;
-  color: var(--accent-2); margin-bottom: 1.1rem;
+  color: var(--accent); margin-bottom: 1.1rem;
   padding-bottom: 0.55rem; border-bottom: 1px solid var(--border);
 }
 .cert-list { display: grid; gap: 1.1rem; }
