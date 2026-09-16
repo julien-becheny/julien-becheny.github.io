@@ -11,14 +11,13 @@
 
   /* Adresse assemblée ici : le motif complet n'apparaît jamais dans le HTML servi,
      ce qui la met hors de portée des aspirateurs d'adresses. */
-  var mail = document.querySelector('[data-mail]');
-  if (mail) {
-    var parts = mail.getAttribute('data-mail').split('|');
+  document.querySelectorAll('[data-mail]').forEach(function (lien) {
+    var parts = lien.getAttribute('data-mail').split('|');
     var address = parts[0] + '@' + parts[1];
-    mail.setAttribute('href', 'mailto:' + address);
-    var label = mail.querySelector('[data-mail-text]');
+    lien.setAttribute('href', 'mailto:' + address);
+    var label = lien.querySelector('[data-mail-text]');
     if (label) label.textContent = address;
-  }
+  });
 
   /* Tant que le portrait n'est pas déposé, mieux vaut rien qu'une image cassée. */
   var photo = document.querySelector('.hero-photo img');
