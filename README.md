@@ -3,9 +3,8 @@
 **[julien-becheny.github.io](https://julien-becheny.github.io)**
 
 Ingénieur QA Automation, je conçois des frameworks de test multi-plateformes et
-l'outillage qui va avec. Ce dépôt héberge mon CV en ligne : une page HTML, deux
-feuilles de style, un script. Pas de framework, pas d'étape de build, pas de
-`node_modules`.
+l'outillage qui va avec. Ce dépôt héberge mon CV en ligne : du HTML, trois feuilles
+de style, un script. Pas de framework, pas d'étape de build, pas de `node_modules`.
 
 ## Pourquoi c'est fait comme ça
 
@@ -21,10 +20,15 @@ navigation, apparitions au défilement. Rien d'essentiel n'en dépend. Le bouton
 est révélé par le script lui-même, pour qu'il n'existe pas s'il ne peut rien déclencher.
 
 **Une feuille d'impression dédiée.** Le bouton « Enregistrer en PDF » ne télécharge pas
-un fichier figé : il bascule la page en document A4. Le thème sombre passe en noir sur
+un fichier figé : il bascule la page en document A4. Les couleurs passent en noir sur
 blanc, la navigation disparaît, les blocs ne se coupent plus entre deux pages, et le
 site de sept écrans tient en trois pages. Le PDF ne peut donc jamais être en retard sur
 le site.
+
+**Deux ambiances, une seule mise en page.** La version claire est celle qui est servie ;
+la sombre reste accessible depuis la barre de navigation. Les proportions, la structure
+et les animations viennent du même fichier : la feuille claire ne redéfinit que les
+couleurs et les quelques blocs qui lui sont propres.
 
 **L'adresse e-mail est assemblée à l'exécution.** Le motif complet n'apparaît nulle part
 dans le HTML servi : les aspirateurs d'adresses repartent les mains vides, un lecteur
@@ -43,11 +47,13 @@ l'outil avec lequel je travaille tous les jours.
 ## Structure
 
 ```
-index.html            tout le contenu
-assets/css/style.css  affichage écran
-assets/css/print.css  bascule en document A4
-assets/js/main.js     impression, navigation, console
-assets/img/           portrait et vignette de partage
+index.html                  la page servie, version claire
+index-sombre.html           la même, en sombre
+assets/css/style.css        mise en page, et thème sombre
+assets/css/theme-clair.css  l'ambiance claire, posée par-dessus
+assets/css/print.css        bascule en document A4
+assets/js/main.js           impression, navigation, console
+assets/img/                 portrait, vignette de partage, captures
 ```
 
 ## En local
