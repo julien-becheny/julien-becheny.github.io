@@ -1,0 +1,28 @@
+title: Julien Becheny
+description: >-
+  Ingénieur QA Automation. Notes sur l'automatisation des tests, le mobile natif,
+  la performance et l'outillage qui rend les tests fiables.
+url: https://julien-becheny.github.io
+lang: fr
+author: Julien Becheny
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Une URL par article, lisible et stable : elle ne changera plus jamais.
+permalink: /blog/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  - .github/

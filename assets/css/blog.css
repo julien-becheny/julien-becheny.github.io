@@ -1,0 +1,202 @@
+/* Blog : reprend les variables du CV, resserre la largeur de lecture. */
+
+.blog-intro {
+  max-width: 68ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ===== Liste des articles ===== */
+
+.post-list {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.post-card {
+  padding: 1.5rem 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.post-card:hover {
+  border-color: rgba(var(--accent-rgb), .45);
+  transform: translateY(-2px);
+}
+
+.post-card time {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--dim);
+  letter-spacing: .02em;
+}
+
+.post-card h3 {
+  margin: .4rem 0 .6rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.post-card h3 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.post-card h3 a:hover { color: var(--accent); }
+
+.post-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ===== Un article ===== */
+
+.post {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 4rem 1.25rem 5rem;
+}
+
+.post-head { margin-bottom: 2.5rem; }
+
+.post-kicker {
+  font-family: var(--font-mono);
+  font-size: .82rem;
+  color: var(--dim);
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+}
+
+.post-kicker a { color: var(--accent); text-decoration: none; }
+.post-kicker a:hover { text-decoration: underline; }
+
+.post-head h1 {
+  margin: .8rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+  line-height: 1.15;
+  letter-spacing: -.015em;
+}
+
+.post-lede {
+  margin: 1.1rem 0 0;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.post-body {
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.post-body > p { margin: 0 0 1.4rem; }
+
+.post-body h2 {
+  margin: 3rem 0 1rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+}
+
+.post-body h3 {
+  margin: 2.2rem 0 .8rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.post-body strong { color: var(--text); font-weight: 600; }
+
+.post-body ul, .post-body ol { margin: 0 0 1.4rem; padding-left: 1.3rem; }
+.post-body li { margin-bottom: .6rem; }
+
+.post-body a { color: var(--accent); }
+
+.post-body blockquote {
+  margin: 1.8rem 0;
+  padding: 1rem 1.4rem;
+  border-left: 3px solid rgba(var(--accent-rgb), .5);
+  background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--muted);
+}
+
+.post-body blockquote > :last-child { margin-bottom: 0; }
+
+.post-body code {
+  font-family: var(--font-mono);
+  font-size: .9em;
+  padding: .12em .4em;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 5px;
+}
+
+.post-body pre {
+  margin: 1.6rem 0;
+  padding: 1.1rem 1.3rem;
+  overflow-x: auto;
+  background: var(--chrome);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.post-body pre code {
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: .88rem;
+  line-height: 1.6;
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin: 1.8rem 0;
+}
+
+.post-body hr {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== Pied d'article ===== */
+
+.post-foot {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.post-contact {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.post-contact a { color: var(--accent); }
+
+.post-suite { margin-top: 2.5rem; }
+
+.post-suite h2 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin: 0 0 .8rem;
+}
+
+.post-suite ul { list-style: none; margin: 0; padding: 0; }
+.post-suite li { margin-bottom: .5rem; }
+.post-suite a { color: var(--accent); text-decoration: none; }
+.post-suite a:hover { text-decoration: underline; }

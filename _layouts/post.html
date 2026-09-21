@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-head">
+    <p class="post-kicker">
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <span aria-hidden="true">·</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+    </p>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="post-lede">{{ page.description }}</p>{% endif %}
+  </header>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  <footer class="post-foot">
+    {% if page.tags.size > 0 %}
+    <ul class="chips">
+      {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    <p class="post-contact">
+      Une question, un désaccord, une expérience contraire ?
+      <a href="https://www.linkedin.com/in/julien-becheny-b13a69123/" target="_blank" rel="noopener">On en parle sur LinkedIn</a>.
+    </p>
+
+    {% assign autres = site.posts | where_exp: "p", "p.url != page.url" | slice: 0, 2 %}
+    {% if autres.size > 0 %}
+    <nav class="post-suite" aria-label="Autres articles">
+      <h2>À lire ensuite</h2>
+      <ul>
+        {% for autre in autres %}
+        <li><a href="{{ autre.url | relative_url }}">{{ autre.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+  </footer>
+</article>
