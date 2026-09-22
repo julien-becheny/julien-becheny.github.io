@@ -2,6 +2,8 @@
 title: "Le test qui échouait n'était jamais celui qui avait le bug"
 seo_title: "Tests automatisés : réparer l'état à l'entrée plutôt que compter sur le teardown"
 description: "Un teardown ne s'exécute pas quand le processus meurt. Les tests suivants tombent alors en cascade, très loin du coupable. Ce qu'on peut ajouter pour combler ce trou."
+image: /assets/img/teardown-journal-etat.png
+image_alt: "Sans filet, un test qui plante fait tomber les suivants. Avec un journal d'état, le test suivant relit et répare."
 tags: [test automatisé, appium, robustesse, robot framework]
 ---
 

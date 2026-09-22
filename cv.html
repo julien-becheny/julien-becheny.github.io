@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Julien Becheny · Ingénieur QA Automation</title>
+<meta name="description" content="Ingénieur QA Automation spécialisé en automatisation multi-plateformes. Framework Robot Framework / Appium couvrant Android, iOS, iPadOS, Web et Windows, et la plateforme d'orchestration qui va avec.">
+<meta name="author" content="Julien Becheny">
+<link rel="canonical" href="https://julien-becheny.github.io/cv.html">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Julien Becheny · Ingénieur QA Automation">
+<meta property="og:description" content="J'aide les équipes à livrer plus vite sans livrer de régression.">
+<meta property="og:url" content="https://julien-becheny.github.io/cv.html">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://julien-becheny.github.io/assets/img/og-clair.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Julien Becheny, ingénieur QA Automation. 380+ tests automatisés, 5 plateformes couvertes, non-régression en 24 h.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0e13'/><text y='.9em' x='50%25' text-anchor='middle' font-size='62' font-family='monospace' fill='%232dd4bf'>JB</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/theme-clair.css">
+<link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+
+<body class="theme-clair">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<!-- Les icônes vivent ici une seule fois, et sont rappelées par <use>. -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="2.4"/><path d="M6.6 9.4 9.6 12l-3 2.6M12.6 15h5"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3 3.5 7.5 12 12l8.5-4.5z"/><path d="M3.5 12 12 16.5 20.5 12"/><path d="M3.5 16.5 12 21l8.5-4.5"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6.4" rx="1.8"/><rect x="3" y="13.6" width="18" height="6.4" rx="1.8"/><path d="M6.6 7.2h.01M6.6 16.8h.01"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M7 20.5V12M12 20.5V4.8M17 20.5v-6.4"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M10.4 3.2 12 8.3l5.1 1.6L12 11.5l-1.6 5.1-1.6-5.1-5.1-1.6 5.1-1.6z"/><path d="m18 14.4.8 2.3 2.3.8-2.3.8-.8 2.3-.8-2.3-2.3-.8 2.3-.8z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 3 6 13.5h5L10.5 21 18 10.5h-5z"/></symbol>
+  <symbol id="i-atom" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="9.4" ry="3.9"/><ellipse cx="12" cy="12" rx="9.4" ry="3.9" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9.4" ry="3.9" transform="rotate(120 12 12)"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2.8v5.2M15 2.8v5.2"/><path d="M6 8h12v3.1a6 6 0 0 1-12 0z"/><path d="M12 17.1v4.1"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="12" rx="2"/><path d="M8.5 20h7M12 16v4"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4.5" y="5" width="15" height="10" rx="1.8"/><path d="M2.5 18.5h19"/></symbol>
+  <symbol id="i-tablet" viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2.4"/><path d="M10.6 18.4h2.8"/></symbol>
+  <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/><path d="M10.8 18.4h2.4"/></symbol>
+  <symbol id="i-robot" viewBox="0 0 24 24"><rect x="3.6" y="7.6" width="16.8" height="12" rx="3.2"/><path d="M12 3.4v4.2"/><circle cx="9" cy="13" r="1.1"/><circle cx="15" cy="13" r="1.1"/><path d="M1.6 12.2v3M22.4 12.2v3"/></symbol>
+  <symbol id="i-windows" viewBox="0 0 24 24"><path d="M3.5 6.2 10.2 5.3v6.1H3.5zM11.6 5.1 20.5 4v7.4h-8.9zM3.5 12.6h6.7v6.1L3.5 17.8zM11.6 12.6h8.9V20l-8.9-1.1z"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 2.6c3 2.5 4.6 5.7 4.6 9.2 0 1.2-.2 2.4-.6 3.4H8c-.4-1-.6-2.2-.6-3.4 0-3.5 1.6-6.7 4.6-9.2z"/><circle cx="12" cy="9.9" r="1.7"/><path d="M8 15.2 5.6 17.4v3.8l2.9-1.6M16 15.2l2.4 2.2v3.8l-2.9-1.6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><path d="m8.2 12.2 2.6 2.6 5-5.4"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.4 2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.1 5.9-.9z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="4.3"/><circle cx="12" cy="12" r=".9"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><path d="M12 6.9v5.3l3.3 2"/></symbol>
+  <symbol id="i-browser" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="M2.5 9h19"/><path d="M5.8 6.8h.01M8.4 6.8h.01"/></symbol>
+</svg>
+
+<nav class="nav no-print" aria-label="Sections du CV">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/"><span>Julien</span> Becheny</a>
+    <ul class="nav-links">
+      <li><a href="#approche">Approche</a></li>
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#experience">Parcours</a></li>
+      <li><a href="#formation">Formation</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <a class="nav-variant" href="cv-sombre.html">Version sombre</a>
+    <button class="btn-pdf" type="button" data-print>Enregistrer en PDF</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-main">
+      <p class="hero-eyebrow">Ingénieur QA Automation</p>
+      <h1 class="hero-name">Julien Becheny</h1>
+      <p class="hero-thesis">
+        <span class="sr-only">Livrer plus vite sans régression.</span>
+        <span class="typing" aria-hidden="true" data-phrases="Un test doit être un signal, pas un coût.|L'architecture avant le volume.|Outiller la chaîne, pas le prompt.|Mesurer plutôt qu'estimer.">Livrer plus vite sans régression.</span>
+      </p>
+
+      <p class="hero-lede">
+        Je construis l'outillage qui rend les tests utiles : un framework Robot Framework couvrant
+        <strong>Android, iOS, iPadOS, Web et Windows</strong>, et la plateforme d'orchestration qui va avec.
+      </p>
+    </div>
+
+    <div class="hero-media">
+      <figure class="hero-photo">
+        <img src="assets/img/julien-becheny.jpg" alt="Portrait de Julien Becheny" width="220" height="220" loading="eager">
+      </figure>
+      <!-- Décor : ces technologies sont déjà listées dans la section Compétences. -->
+      <ul class="hero-stack" aria-hidden="true">
+        <li><span class="tile tile-sm"><svg class="ico"><use href="#i-robot"/></svg></span>Robot Framework</li>
+        <li><span class="tile tile-sm tile-2"><svg class="ico"><use href="#i-mobile"/></svg></span>Appium</li>
+        <li><span class="tile tile-sm tile-3"><svg class="ico"><use href="#i-code"/></svg></span>Python</li>
+        <li><span class="tile tile-sm"><svg class="ico"><use href="#i-browser"/></svg></span>Playwright</li>
+      </ul>
+    </div>
+
+    <ul class="stats" aria-label="Chiffres clés">
+      <li class="stat">
+        <span class="stat-value">380+</span>
+        <span class="stat-label">tests automatisés</span>
+      </li>
+      <li class="stat">
+        <span class="stat-value">5</span>
+        <span class="stat-label">plateformes couvertes</span>
+      </li>
+      <li class="stat stat-wide">
+        <span class="stat-value">24 h</span>
+        <span class="stat-label">de non-régression, contre 1 semaine</span>
+      </li>
+    </ul>
+
+    <div class="hero-links">
+      <a class="link-chip" href="https://www.linkedin.com/in/julien-becheny-b13a69123/" target="_blank" rel="noopener" data-print-label="linkedin.com/in/julien-becheny-b13a69123">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.5 8.65 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.32-2.02-3.32-2.02 0-2.33 1.58-2.33 3.21V21H9z"/></svg>
+        LinkedIn
+      </a>
+      <a class="link-chip" href="https://github.com/julien-becheny" target="_blank" rel="noopener" data-print-label="github.com/julien-becheny">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+        GitHub
+      </a>
+      <a class="link-chip" data-mail="julien.becheny|gmail.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24-8 4.76-8-4.76V6l8 4.75L20 6z"/></svg>
+        <span data-mail-text>julien.becheny [at] gmail.com</span>
+      </a>
+      <span class="link-chip link-chip-static">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+        ISTQB® Foundation
+      </span>
+      <span class="link-chip link-chip-static">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-3.87 0-7 3.13-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        Montpellier
+      </span>
+    </div>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- Approche -->
+<section class="section" id="approche">
+  <div class="wrap">
+    <p class="section-kicker">01 · Approche</p>
+    <h2 class="section-title">Un test doit être un signal, pas un coût</h2>
+
+    <blockquote class="pull-quote">
+      <p>
+        Ce qui m'intéresse, c'est le moment où un test cesse d'être un coût de maintenance
+        pour devenir un signal fiable. Un test qui échoue au hasard ne protège personne :
+        <strong>il apprend à l'équipe à ignorer le rouge.</strong>
+      </p>
+      <footer>Je passe donc autant de temps sur la robustesse et sur le diagnostic (comprendre un échec en une lecture) que sur la couverture.</footer>
+    </blockquote>
+
+    <div class="grid-4">
+      <article class="principle">
+        <span class="tile"><svg class="ico"><use href="#i-layers"/></svg></span>
+        <span class="principle-num">01</span>
+        <h3>L'architecture avant le volume</h3>
+        <p>Un framework modulaire vieillit mieux qu'un catalogue de scripts. Un changement d'écran ne doit pas faire tomber dix tests.</p>
+      </article>
+      <article class="principle">
+        <span class="tile tile-3"><svg class="ico"><use href="#i-server"/></svg></span>
+        <span class="principle-num">02</span>
+        <h3>L'infrastructure fait partie du test</h3>
+        <p>Banc multi-OS, environnements, données de test provisionnées par API. Ce qui entoure le test décide de sa fiabilité.</p>
+      </article>
+      <article class="principle">
+        <span class="tile"><svg class="ico"><use href="#i-chart"/></svg></span>
+        <span class="principle-num">03</span>
+        <h3>Mesurer plutôt qu'estimer</h3>
+        <p>Temps d'exécution, temps d'affichage, fuites mémoire. Sans chiffre, une lenteur reste une impression que personne ne corrige.</p>
+      </article>
+      <article class="principle">
+        <span class="tile tile-2"><svg class="ico"><use href="#i-spark"/></svg></span>
+        <span class="principle-num">04</span>
+        <h3>L'IA en pair programming</h3>
+        <p>Dans mon éditeur au quotidien depuis plus de deux ans : elle propose, je relis, je tranche. Cadrée elle accélère, laissée libre elle invente.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Réalisations -->
+<section class="section section-alt" id="realisations">
+  <div class="wrap">
+    <p class="section-kicker">02 · Réalisations</p>
+    <h2 class="section-title">Ce que j'ai construit</h2>
+
+    <!-- Projet phare 1 -->
+    <article class="feature">
+      <div class="feature-head">
+        <span class="feature-tag">Projet phare</span>
+        <h3>Plateforme d'orchestration des tests</h3>
+        <p class="feature-sub">Conception et développement · utilisée au quotidien par l'équipe QA</p>
+      </div>
+
+      <div class="feature-body">
+        <p>
+          Une équipe QA ne manque pas de tests : elle manque de moyens de les <em>piloter</em>.
+          J'ai conçu et développé une plateforme 3-tiers qui met l'exécution, la configuration
+          et le diagnostic entre les mains de toute l'équipe, pas seulement de celui qui a écrit les scripts.
+        </p>
+        <ol class="tiers flow">
+          <li>
+            <span class="tile"><svg class="ico"><use href="#i-atom"/></svg></span>
+            <span class="tier-num">React</span>
+            <div>
+              <h4>Interface d'administration</h4>
+              <p>Assistant de configuration, sélection des tests, suivi d'exécution en temps réel.</p>
+            </div>
+          </li>
+          <li>
+            <span class="tile tile-2"><svg class="ico"><use href="#i-plug"/></svg></span>
+            <span class="tier-num">Flask</span>
+            <div>
+              <h4>API métier</h4>
+              <p>Routes fines déléguant à des services métier, découpage proche de la Clean Architecture.</p>
+            </div>
+          </li>
+          <li>
+            <span class="tile tile-3"><svg class="ico"><use href="#i-terminal"/></svg></span>
+            <span class="tier-num">Robot</span>
+            <div>
+              <h4>Moteur d'exécution</h4>
+              <p>Abstraction Appium multi-plateforme : Android, iOS, Windows&nbsp;MAUI.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="feature-around plus-card">
+          <span class="tile tile-sm"><svg class="ico"><use href="#i-star"/></svg></span>
+          <span><strong>Autour :</strong> configuration centralisée, chiffrement des credentials,
+          reporting Allure&nbsp;/&nbsp;ELK, intégration CI&nbsp;/&nbsp;CD, provisioning des données de test par API.</span>
+        </p>
+
+        <div class="feature-public split">
+          <h4>Une version publique, pour en juger sur pièces</h4>
+          <p>
+            <strong>TestOps</strong> reprend les mêmes partis pris sur des applications de
+            démonstration : aucune URL dans les tests, aucun mot de passe versionné, un run
+            qui part d'un contexte explicite. Elle donne à voir l'architecture et les
+            décisions, pas l'étendue : la plateforme en service couvre en plus le mobile natif
+            via Appium, évolue en continu avec le produit testé, et reste privée.
+          </p>
+
+          <div class="project-links">
+            <a class="project-link project-link-main" href="https://julien-becheny.github.io/robot-testops/" target="_blank" rel="noopener" data-print-label="julien-becheny.github.io/robot-testops">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              Voir la démo
+            </a>
+            <a class="project-link" href="https://github.com/julien-becheny/robot-testops" target="_blank" rel="noopener" data-print-label="github.com/julien-becheny/robot-testops">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+              Lire le code
+            </a>
+          </div>
+
+          <p class="feature-note">
+            La démo rejoue une exécution enregistrée : logs, étapes, verdict et rapport sont
+            réels, mais rien n'est exécuté dans le navigateur.
+          </p>
+
+          <figure class="shot">
+            <img src="assets/img/testops-accueil.png" alt="Interface TestOps : choix entre un smoke test et une exécution par tags, avec le contexte du run affiché en entête" width="1280" height="800" loading="lazy" decoding="async">
+            <figcaption>Le point d'entrée : ce qu'on lance, et dans quel contexte.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- Projet phare 2 -->
+    <article class="feature feature-ai">
+      <div class="feature-head">
+        <span class="feature-tag">Projet phare</span>
+        <h3>L'IA appliquée au test</h3>
+        <p class="feature-sub">Outiller la chaîne, pas le prompt</p>
+      </div>
+
+      <div class="feature-body">
+        <p class="feature-thesis">
+          Faire écrire un test par une IA est facile. Le rendre fiable est un problème de qualité :
+          <strong>un test plausible mais faux est pire qu'un test absent.</strong>
+        </p>
+
+        <ul class="ai-list">
+          <li>
+            <span class="tile tile-sm tile-2"><svg class="ico"><use href="#i-robot"/></svg></span>
+            <div>
+              <h4>Des agents spécialisés qui se passent la main</h4>
+              <p>Un ticket devient un scénario, le scénario devient un test, et le test est joué avant d'arriver en relecture humaine.</p>
+            </div>
+          </li>
+          <li>
+            <span class="tile tile-sm"><svg class="ico"><use href="#i-layers"/></svg></span>
+            <div>
+              <h4>Un contexte préparé plutôt que fouillé</h4>
+              <p>Le coût d'un agent, c'est ce qu'il lit, et ce qu'il a lu se repaie à chaque échange suivant. D'où des index générés depuis le code (tests, keywords, données, sélecteurs) qu'il consulte au lieu de parcourir le dépôt : il réutilise l'existant au lieu de le réinventer, pour une fraction du coût.</p>
+            </div>
+          </li>
+          <li>
+            <span class="tile tile-sm tile-3"><svg class="ico"><use href="#i-check"/></svg></span>
+            <div>
+              <h4>Des garde-fous qui refusent une écriture non conforme</h4>
+              <p>Avant qu'elle n'arrive, pas au moment de la revue.</p>
+            </div>
+          </li>
+          <li>
+            <span class="tile tile-sm tile-2"><svg class="ico"><use href="#i-spark"/></svg></span>
+            <div>
+              <h4>Une boucle de capitalisation</h4>
+              <p>Chaque vrai défaut devient une règle écrite, qui contraint la génération suivante.</p>
+            </div>
+          </li>
+          <li>
+            <span class="tile tile-sm"><svg class="ico"><use href="#i-plug"/></svg></span>
+            <div>
+              <h4>Un serveur MCP relié à l'application sous test</h4>
+              <p>L'assistant inspecte l'interface réelle pour proposer des sélecteurs qui existent, au lieu de les inventer.</p>
+            </div>
+          </li>
+        </ul>
+
+        <p class="feature-around plus-card">
+          <span class="tile tile-sm tile-2"><svg class="ico"><use href="#i-target"/></svg></span>
+          <span>Le gain n'est pas d'écrire plus de tests. C'est de <strong>raccourcir le trajet entre un ticket
+          et un test que je suis prêt à défendre en revue.</strong></span>
+        </p>
+      </div>
+    </article>
+
+    <!-- Résultat chiffré -->
+    <article class="feature feature-result">
+      <div class="feature-head">
+        <span class="feature-tag">Résultat</span>
+        <h3>Non-régression : d'une semaine à 24&nbsp;h</h3>
+      </div>
+      <div class="feature-body">
+        <p>
+          Parallélisation sur le banc de tests, découpage par tags, injection des données de test
+          par API plutôt que par l'interface.
+          <strong>Le retour aux développeurs arrive dans la journée, plus en fin de sprint.</strong>
+        </p>
+
+        <div class="split">
+          <div>
+            <div class="gauge">
+              <div class="gauge-row">
+                <span class="gauge-name">Avant</span>
+                <span class="gauge-track"><span class="gauge-fill" style="--w:100%"></span></span>
+                <span class="gauge-value">1 semaine</span>
+              </div>
+              <div class="gauge-row">
+                <span class="gauge-name">Après</span>
+                <span class="gauge-track"><span class="gauge-fill is-after" style="--w:14%"></span></span>
+                <span class="gauge-value is-strong">24 h</span>
+              </div>
+            </div>
+
+            <span class="gauge-badge"><svg class="ico"><use href="#i-clock"/></svg>Sept fois plus court, sur le même périmètre</span>
+
+            <ul class="devices">
+              <li><span class="tile tile-sm"><svg class="ico"><use href="#i-monitor"/></svg></span>4 PC</li>
+              <li><span class="tile tile-sm"><svg class="ico"><use href="#i-laptop"/></svg></span>2 Mac</li>
+              <li><span class="tile tile-sm tile-3"><svg class="ico"><use href="#i-robot"/></svg></span>Android</li>
+              <li><span class="tile tile-sm tile-2"><svg class="ico"><use href="#i-mobile"/></svg></span>iPhone</li>
+              <li><span class="tile tile-sm tile-2"><svg class="ico"><use href="#i-tablet"/></svg></span>iPad</li>
+              <li><span class="tile tile-sm"><svg class="ico"><use href="#i-windows"/></svg></span>Windows</li>
+            </ul>
+          </div>
+
+          <figure class="shot">
+            <img src="assets/img/testops-execution.png" alt="Suivi d'exécution TestOps : deux tests passés en trois secondes, chaque étape dépliée sous son test" width="1280" height="800" loading="lazy" decoding="async">
+            <figcaption>Le retour attendu : chaque étape, son verdict, son temps.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Compétences -->
+<section class="section" id="competences">
+  <div class="wrap">
+    <p class="section-kicker">03 · Compétences</p>
+    <h2 class="section-title">Stack technique</h2>
+
+    <div class="grid-skills">
+      <div class="skill-group">
+        <h3><span class="tile tile-sm"><svg class="ico"><use href="#i-code"/></svg></span>Langages</h3>
+        <ul class="chips">
+          <li>Python</li><li>Robot Framework</li><li>JavaScript</li><li>SQL</li><li>Bash / Batch</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3><span class="tile tile-sm tile-3"><svg class="ico"><use href="#i-bolt"/></svg></span>Automatisation</h3>
+        <ul class="chips">
+          <li>Appium</li><li>Playwright</li><li>Selenium</li><li>Page Object</li><li>BDD / tags</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3><span class="tile tile-sm tile-2"><svg class="ico"><use href="#i-mobile"/></svg></span>Mobile &amp; Desktop</h3>
+        <ul class="chips">
+          <li>Android SDK / adb</li><li>Xcode / libimobiledevice</li><li>iPadOS</li><li>Windows MAUI / MSIX</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3><span class="tile tile-sm"><svg class="ico"><use href="#i-atom"/></svg></span>Développement</h3>
+        <ul class="chips">
+          <li>Flask</li><li>React</li><li>API REST</li><li>Clean Architecture</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3><span class="tile tile-sm tile-3"><svg class="ico"><use href="#i-rocket"/></svg></span>CI &amp; Reporting</h3>
+        <ul class="chips">
+          <li>Git</li><li>CI / CD</li><li>Concourse</li><li>Nexus</li><li>Allure</li><li>ELK</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3><span class="tile tile-sm tile-2"><svg class="ico"><use href="#i-check"/></svg></span>Méthode</h3>
+        <ul class="chips">
+          <li>Agile / Scrum</li><li>Analyse de risque</li><li>Jira / Confluence / Xray</li><li>Analyse de causes racines</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Parcours -->
+<section class="section section-alt" id="experience">
+  <div class="wrap">
+    <p class="section-kicker">04 · Parcours</p>
+    <h2 class="section-title">Expérience professionnelle</h2>
+
+    <ol class="timeline">
+
+      <li class="job job-current">
+        <div class="job-meta">
+          <span class="job-dates">mars 2023 – aujourd'hui</span>
+          <span class="job-place">Castries · Hybride</span>
+          <span class="badge-current">En poste</span>
+        </div>
+        <div class="job-content">
+          <h3>Ingénieur QA Automation / SDET</h3>
+          <p class="job-company">VEGA - Epsilog <span>· CDI</span></p>
+          <p class="job-context">Solutions de gestion et de télétransmission pour les professionnels de santé.</p>
+          <p class="job-mission">Garantir la fiabilité d'un produit multi-plateformes (Android, iOS, iPadOS, Web, Windows) avec une automatisation qui tient dans la durée.</p>
+          <ul class="job-points">
+            <li><strong>Framework d'automatisation.</strong> Conception et maintenance d'un framework Robot Framework / Appium couvrant Mobile, Web et Desktop : plus de 380 tests automatisés, architecture modulaire (Page Object, keywords métier, données externalisées).</li>
+            <li><strong>Campagne de non-régression ramenée d'une semaine à 24&nbsp;h.</strong> Parallélisation, découpage par tags, injection des données par API.</li>
+            <li><strong>Plateforme d'orchestration des tests.</strong> Conception et développement de bout en bout : React → Flask → Robot Framework. Utilisée au quotidien par l'équipe QA.</li>
+            <li><strong>Banc de test et environnements.</strong> 4 PC, 2 Mac, Android, iPhone, iPad. Administration des environnements.</li>
+            <li><strong>Performance et diagnostic.</strong> Mesure des temps d'affichage, détection de fuites mémoire, analyse des régressions critiques.</li>
+          </ul>
+          <ul class="chips chips-tech">
+            <li>Python</li><li>Robot Framework</li><li>Appium</li><li>Playwright</li><li>React</li><li>Flask</li><li>Allure</li><li>ELK</li><li>Concourse</li><li>Nexus</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="job">
+        <div class="job-meta">
+          <span class="job-dates">déc. 2022 – mars 2023</span>
+          <span class="job-place">Montpellier · Hybride</span>
+        </div>
+        <div class="job-content">
+          <h3>Testeur QA logiciels</h3>
+          <p class="job-company">MEDIN+ <span>· CDI</span></p>
+          <p class="job-context">Télémédecine et téléradiologie, coordination des soins non programmés.</p>
+          <ul class="job-points">
+            <li>Conception de scénarios de test couvrant les parcours critiques utilisateurs, sur des plateformes médicales engagées dans la décision de soin.</li>
+            <li>Collaboration avec les PO pour affiner les critères d'acceptation et garantir la conformité aux exigences métier.</li>
+            <li>Participation aux rituels agiles au sein d'une équipe IT de 18 personnes.</li>
+          </ul>
+          <ul class="chips chips-tech">
+            <li>Robot Framework</li><li>Selenium WebDriver</li><li>Jira</li><li>Confluence</li><li>Scrum</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="job job-training">
+        <div class="job-meta">
+          <span class="job-dates">sept. – déc. 2022</span>
+          <span class="job-place">Reconversion</span>
+        </div>
+        <div class="job-content">
+          <h3>Formation intensive : test et qualité logicielle</h3>
+          <p class="job-company">Fitec / Devenez <span>· 4 mois</span></p>
+          <p class="job-context">Certificat de compétences professionnelles « Consultant testing agile », mention très bien.</p>
+        </div>
+      </li>
+
+      <li class="job">
+        <div class="job-meta">
+          <span class="job-dates">2017 – févr. 2018</span>
+          <span class="job-place">Marseille</span>
+        </div>
+        <div class="job-content">
+          <h3>Analyste test / Chargé de mission SIRH</h3>
+          <p class="job-company">GROUPE SOS <span>· CDD</span></p>
+          <p class="job-context">Recette d'une évolution du système de paie HRAccess.</p>
+          <ul class="job-points">
+            <li>Rédaction des spécifications de test à partir des exigences métier ; tests fonctionnels, de non-régression et de confirmation en environnement de recette.</li>
+            <li>Référentiel de test et suivi d'anomalies dans Jira, en lien avec les équipes de développement Sopra.</li>
+            <li>Pilotage des phases de recette jusqu'à la mise en production, jeux de données et guides utilisateurs à l'appui.</li>
+          </ul>
+          <ul class="chips chips-tech">
+            <li>HRAccess</li><li>Jira</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="job job-before">
+        <div class="job-meta">
+          <span class="job-dates">2008 – 2021</span>
+          <span class="job-place">Paris</span>
+        </div>
+        <div class="job-content">
+          <h3>Avant la reconversion : gestion et management</h3>
+          <p class="job-context">
+            Treize ans à faire tourner des organisations avant de faire tourner des tests.
+            Ce qui en reste : le pilotage d'un projet long, la rigueur documentaire, et l'habitude
+            de mesurer plutôt que de supposer.
+          </p>
+          <ul class="job-points job-points-compact">
+            <li><strong>Responsable administratif et financier</strong>, EBD, Paris <span class="dates-inline">(2018–2021)</span>. Pilotage de la certification Qualiopi : décomposition des 32 indicateurs en tâches vérifiables, procédures de validation tracées. Tableaux de bord et automatisation du reporting.</li>
+            <li><strong>Office manager</strong>, Kaupunki, Paris <span class="dates-inline">(2012–2016)</span>. Équipe de 8 personnes, bases de données de suivi client, automatisation des tâches récurrentes.</li>
+            <li><strong>Gérant de brasserie</strong>, Groupe Bergheaud, Paris <span class="dates-inline">(2008–2011)</span>. Équipe de 15 personnes, gestion des stocks et du compte d'exploitation.</li>
+          </ul>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- Formation -->
+<section class="section" id="formation">
+  <div class="wrap">
+    <p class="section-kicker">05 · Formation</p>
+    <h2 class="section-title">Diplômes et certifications</h2>
+
+    <div class="grid-2">
+
+      <div class="col">
+        <h3 class="col-title">Certifications</h3>
+        <ul class="cert-list">
+          <li>
+            <div class="cert-head"><h4>ISTQB® Foundation Level</h4><span class="cert-year">déc. 2022</span></div>
+            <p>GASQ France · identifiant 22-CTFL-95169-FR</p>
+          </li>
+          <li>
+            <div class="cert-head"><h4>PSPO I, Professional Scrum Product Owner</h4><span class="cert-year">oct. 2022</span></div>
+            <p>Scrum.org</p>
+          </li>
+          <li>
+            <div class="cert-head"><h4>Consultant testing agile</h4><span class="cert-year">nov. 2022</span></div>
+            <p>Certificat de compétences professionnelles · Fitec</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3 class="col-title">Formation</h3>
+        <ul class="cert-list">
+          <li>
+            <div class="cert-head"><h4>Robot Framework</h4><span class="cert-year">févr. 2025</span></div>
+            <p>Orsys</p>
+          </li>
+          <li>
+            <div class="cert-head"><h4>Python, programmation objet</h4><span class="cert-year">déc. 2023</span></div>
+            <p>Orsys</p>
+          </li>
+          <li>
+            <div class="cert-head"><h4>Testeur logiciel, formation intensive</h4><span class="cert-year">2022</span></div>
+            <p>Fitec · mention très bien</p>
+          </li>
+          <li>
+            <div class="cert-head"><h4>DESS Génétique et biologie moléculaire</h4><span class="cert-year">2004</span></div>
+            <p>Université de Montpellier</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Prise de contact -->
+<section class="cta no-print" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-panel">
+      <div class="cta-main">
+        <p class="cta-kicker">Ouvert aux opportunités</p>
+        <h2 id="cta-title">Parlons de vos tests</h2>
+        <p class="cta-lede">
+          Une campagne de non-régression trop longue, un framework devenu ingérable,
+          une chaîne d'automatisation à monter de zéro : dites-moi où ça coince.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="cta-btn cta-btn-main" data-mail="julien.becheny|gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24-8 4.76-8-4.76V6l8 4.75L20 6z"/></svg>
+          M'écrire
+        </a>
+        <a class="cta-btn" href="https://www.linkedin.com/in/julien-becheny-b13a69123/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.5 8.65 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.32-2.02-3.32-2.02 0-2.33 1.58-2.33 3.21V21H9z"/></svg>
+          LinkedIn
+        </a>
+        <a class="cta-btn" href="https://github.com/julien-becheny" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p class="footer-name">Julien Becheny · Ingénieur QA Automation · Montpellier</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/julien-becheny-b13a69123/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/julien-becheny" target="_blank" rel="noopener">GitHub</a>
+      <button class="footer-pdf no-print" type="button" data-print>Enregistrer en PDF</button>
+    </div>
+  </div>
+</footer>
+
+<!-- Revele par le script : sans JS, un bouton qui n'anime rien n'a pas lieu d'etre. -->
+<button class="run-btn no-print" type="button" data-run-open hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+  <span>Lancer la suite</span>
+</button>
+
+<div class="console no-print" data-console hidden>
+  <div class="console-backdrop" data-run-close></div>
+  <div class="console-window" role="dialog" aria-modal="true" aria-labelledby="console-title">
+    <header class="console-bar">
+      <span class="console-title" id="console-title">robot --include profil julien_becheny.robot</span>
+      <span class="console-btns">
+        <i class="win-btn win-min" aria-hidden="true"></i>
+        <i class="win-btn win-max" aria-hidden="true"></i>
+        <button class="win-btn console-close" type="button" data-run-close aria-label="Fermer la console">
+          <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 10 10M10 0 0 10"/></svg>
+        </button>
+      </span>
+    </header>
+    <div class="console-body" data-console-body aria-live="polite"></div>
+    <footer class="console-foot">
+      <span data-console-hint>Cliquez pour tout afficher</span>
+      <button class="console-replay" type="button" data-run-replay hidden>Rejouer</button>
+    </footer>
+  </div>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

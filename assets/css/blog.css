@@ -67,6 +67,16 @@
 
 .post-head { margin-bottom: 2.5rem; }
 
+.post-visuel { margin: 0 0 2.5rem; }
+
+.post-visuel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
 .post-kicker {
   font-family: var(--font-mono);
   font-size: .82rem;

@@ -2,6 +2,8 @@
 title: "Un bouton, quatre sélecteurs, un seul test"
 seo_title: "Tester la même application sur Android, iOS, iPadOS et Windows sans dupliquer les sélecteurs"
 description: "Le même bouton se trouve de quatre façons différentes selon la plateforme. Plutôt que dupliquer la suite ou semer des conditions dans les tests, le choix peut déménager dans une seule couche."
+image: /assets/img/crosslocator.png
+image_alt: "Déclaration d'un sélecteur unique résolu selon la plateforme courante"
 tags: [appium, mobile, robot framework, page object, python]
 ---
 

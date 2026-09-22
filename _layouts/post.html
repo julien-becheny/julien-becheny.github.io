@@ -12,6 +12,12 @@ layout: default
     {% if page.description %}<p class="post-lede">{{ page.description }}</p>{% endif %}
   </header>
 
+  {% if page.image %}
+  <figure class="post-visuel">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" loading="eager">
+  </figure>
+  {% endif %}
+
   <div class="post-body">
     {{ content }}
   </div>
