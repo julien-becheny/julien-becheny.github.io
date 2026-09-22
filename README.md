@@ -1,10 +1,16 @@
-# Mon CV, en une page et sans dépendance
+# Mon CV, et les notes qui vont avec
 
 **[julien-becheny.github.io](https://julien-becheny.github.io)**
 
 Ingénieur QA Automation, je conçois des frameworks de test multi-plateformes et
-l'outillage qui va avec. Ce dépôt héberge mon CV en ligne : du HTML, trois feuilles
-de style, un script. Pas de framework, pas d'étape de build, pas de `node_modules`.
+l'outillage qui va avec. Ce dépôt héberge mon site : une page d'accueil, mon CV, et
+un blog sur l'automatisation des tests.
+
+**Le CV n'a aucune dépendance.** C'est un fichier HTML, trois feuilles de style et un
+script. Il s'ouvre en double-cliquant dessus, et le générateur du site le recopie sans
+y toucher. Le blog, lui, passe par Jekyll, que GitHub Pages construit nativement : pas
+de workflow à maintenir, pas de construction locale pour publier, pas de
+`node_modules`.
 
 ## Pourquoi c'est fait comme ça
 
@@ -25,10 +31,10 @@ blanc, la navigation disparaît, les blocs ne se coupent plus entre deux pages, 
 site de sept écrans tient en trois pages. Le PDF ne peut donc jamais être en retard sur
 le site.
 
-**Deux ambiances, une seule mise en page.** La version claire est celle qui est servie ;
-la sombre reste accessible depuis la barre de navigation. Les proportions, la structure
-et les animations viennent du même fichier : la feuille claire ne redéfinit que les
-couleurs et les quelques blocs qui lui sont propres.
+**Deux ambiances, une seule mise en page.** La version claire du CV est celle vers
+laquelle pointent les liens ; la sombre reste accessible depuis la barre de navigation.
+Les proportions, la structure et les animations viennent du même fichier : la feuille
+claire ne redéfinit que les couleurs et les quelques blocs qui lui sont propres.
 
 **L'adresse e-mail est assemblée à l'exécution.** Le motif complet n'apparaît nulle part
 dans le HTML servi : les aspirateurs d'adresses repartent les mains vides, un lecteur
@@ -37,6 +43,19 @@ humain voit un lien normal.
 **Accessibilité et sobriété.** Lien d'évitement, structure de titres cohérente, focus
 visible, fermeture au clavier, `prefers-reduced-motion` respecté. Une seule requête
 externe, pour les polices.
+
+## Le blog
+
+Les articles sont écrits en Markdown et publiés par un simple `git push`. Trois choix
+les gouvernent.
+
+**Une URL par article, stable et lisible**, décidée une fois pour toutes. Un lien
+partagé qui meurt emporte l'article avec lui.
+
+**Un flux RSS**, pour qu'on puisse suivre sans dépendre d'un algorithme.
+
+**Des métadonnées de partage par article**, image comprise : sans elles, un lien posté
+ailleurs s'affiche en carte vide et n'est pas cliqué.
 
 ## Un détail pour les gens du métier
 
