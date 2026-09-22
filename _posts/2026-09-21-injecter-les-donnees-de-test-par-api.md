@@ -2,6 +2,8 @@
 title: "70 % du temps de mes tests ne testait rien"
 seo_title: "Accélérer des tests automatisés : injecter les données par API plutôt que par l'interface"
 description: "Sur une suite de tests mobiles, la mise en condition consommait sept dixièmes du temps d'exécution. Comment la déplacer vers l'API, et surtout quand ne pas le faire."
+image: /assets/img/injection-api.png
+image_alt: "Comparaison de deux barres de temps : tout par l'interface, 70 % de préparation et 30 % de vérification, contre une mise en condition par API deux à trois fois plus courte."
 tags: [test automatisé, appium, robot framework, api, performance]
 ---
 

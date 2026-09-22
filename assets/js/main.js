@@ -40,7 +40,9 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* Section courante dans la navigation */
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  // La nav peut contenir des liens vers d'autres pages : seules les ancres sont observables.
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'))
+    .filter(function (link) { return (link.getAttribute('href') || '').charAt(0) === '#'; });
   var sections = navLinks
     .map(function (link) { return document.querySelector(link.getAttribute('href')); })
     .filter(Boolean);
