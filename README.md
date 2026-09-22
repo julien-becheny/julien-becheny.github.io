@@ -47,21 +47,31 @@ l'outil avec lequel je travaille tous les jours.
 ## Structure
 
 ```
-index.html                  la page servie, version claire
-index-sombre.html           la même, en sombre
+index.html                  l'accueil : positionnement, derniers articles, projets
+cv.html                     le CV, version claire
+cv-sombre.html              le CV, version sombre
+blog/index.html             la liste des articles
+_posts/                     les articles, en Markdown
+_layouts/                   gabarits du blog et de l'accueil
+_config.yml                 Jekyll : flux RSS, plan de site, forme des URLs
 assets/css/style.css        mise en page, et thème sombre
 assets/css/theme-clair.css  l'ambiance claire, posée par-dessus
+assets/css/blog.css         articles et listes
 assets/css/print.css        bascule en document A4
 assets/js/main.js           impression, navigation, console
 assets/img/                 portrait, vignette de partage, captures
 ```
 
+Le site est construit par Jekyll, nativement sur GitHub Pages : aucun workflow à
+maintenir, aucune construction locale nécessaire pour publier.
+
 ## En local
 
-Ouvrir `index.html` suffit. Pour un rendu identique à la production :
+Ouvrir `cv.html` suffit pour le CV seul. Pour le site entier, gabarits et articles
+compris :
 
 ```bash
-python -m http.server 8080
+bundle exec jekyll serve
 ```
 
 ## Réemploi

@@ -1,7 +1,7 @@
 /*
    Variante claire, posée par-dessus style.css.
 
-   Elle ne remplace rien : index.html reste la version de référence.
+   Elle ne remplace rien : cv.html reste la version de référence.
    Seule index-clair.html charge ce fichier, après style.css, et ajoute
    `class="theme-clair"` sur <body>. La mise en page, les proportions et
    les animations viennent toujours de style.css ; ici on ne redéfinit que
