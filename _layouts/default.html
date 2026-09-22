@@ -8,12 +8,18 @@
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{{ page.title | default: site.title }}">
 <meta property="og:description" content="{{ page.description | default: site.description }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:locale" content="fr_FR">
-{% assign og = page.image | default: '/assets/img/og-clair.png' %}
+{% comment %}
+  La carte de partage veut du paysage 1200x630. Les visuels d'articles sont en
+  portrait pour LinkedIn : ils illustrent la page, ils ne la partagent pas.
+{% endcomment %}
+{% assign og = page.og_image | default: '/assets/img/og-clair.png' %}
 <meta property="og:image" content="{{ og | absolute_url }}">
+<meta property="og:image:alt" content="{{ page.image_alt | default: 'Julien Becheny, ingénieur QA Automation' }}">
 <meta name="twitter:card" content="summary_large_image">
 {% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
 
