@@ -23,6 +23,12 @@ defaults:
 feed:
   path: feed.xml
 
+# Mesure d'audience. Renseigner le sous-domaine GoatCounter pour l'activer,
+# par exemple "julienbecheny" pour julienbecheny.goatcounter.com.
+# Vide : aucun script n'est chargé, aucune donnée n'est collectée.
+# Sans cookie ni identifiant persistant, donc sans bannière de consentement.
+goatcounter: ""
+
 exclude:
   - README.md
   - .github/
