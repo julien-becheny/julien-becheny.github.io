@@ -27,9 +27,9 @@ est révélé par le script lui-même, pour qu'il n'existe pas s'il ne peut rien
 
 **Une feuille d'impression dédiée.** Le bouton « Enregistrer en PDF » ne télécharge pas
 un fichier figé : il bascule la page en document A4. Les couleurs passent en noir sur
-blanc, la navigation disparaît, les blocs ne se coupent plus entre deux pages, et le
-site de sept écrans tient en trois pages. Le PDF ne peut donc jamais être en retard sur
-le site.
+blanc, la navigation disparaît, les blocs ne se coupent plus entre deux pages, et le CV
+tient en cinq pages, quatre pour la version sombre (mesuré avec Chrome le 25 septembre
+2026). Le PDF ne peut donc jamais être en retard sur le site.
 
 **Deux ambiances, une seule mise en page.** La version claire du CV est celle vers
 laquelle pointent les liens ; la sombre reste accessible depuis la barre de navigation.

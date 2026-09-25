@@ -234,6 +234,8 @@ strong { color: var(--print-text) !important; }
 /* Compétences */
 
 .grid-skills { gap: 2.5mm 4mm; grid-template-columns: repeat(3, 1fr); }
+/* Pleine largeur : en colonne, le septième groupe ajoutait une page au CV clair. */
+.skill-group-wide { grid-column: 1 / -1; }
 .skill-group h3 {
   color: var(--print-accent) !important;
   border-bottom-color: var(--print-border) !important;
