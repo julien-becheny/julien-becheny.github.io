@@ -3,6 +3,7 @@ title: "L'assistant ne voit pas l'écran, alors il invente"
 seo_title: "Donner à un assistant IA les vrais sélecteurs d'une application mobile, avec un serveur MCP"
 description: "Un modèle qui écrit un test Appium propose des sélecteurs plausibles et faux, parce qu'il n'a jamais vu l'écran. Voici ce que change le fait de lui donner l'application réelle, et ce que ça coûte en contexte."
 image: /assets/img/ecran-reel.png
+og_image: /assets/img/ecran-reel-partage.png
 image_alt: "Sans voir l'écran, l'assistant invente accessibility_id=bouton_valider. Avec l'écran réel, il reçoit des sélecteurs qui existent, classés de recommandé à fragile, et des sorties bornées : 400 lignes d'arbre, 15 éléments par recherche, captures de 1 280 px de large."
 tags: [appium, mcp, ia, mobile, test automatisé, python]
 ---
